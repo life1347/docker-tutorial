@@ -1,0 +1,15 @@
+FROM alpine:latest
+
+RUN apk add --update bash
+
+COPY nonstop.sh /run.sh
+
+RUN chmod +x /run.sh
+
+ENTRYPOINT ["/run.sh"]
+
+# detach from a container container using ctrl+pq
+# https://docs.docker.com/engine/reference/commandline/attach/#parent-command
+# Note: A process running as PID 1 inside a container is treated specially by Linux:
+# it ignores any signal with the default action. So, the process will not terminate on
+# SIGINT or SIGTERM unless it is coded to do so.

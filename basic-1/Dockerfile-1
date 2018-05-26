@@ -1,0 +1,8 @@
+# Use alpine:latest as parent image
+FROM alpine:latest
+
+# Write string to file
+RUN echo "World!" > /hw.txt
+
+# Set container entrypoint to "ping"
+ENTRYPOINT ["ping", "8.8.8.8"]

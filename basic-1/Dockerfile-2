@@ -1,0 +1,13 @@
+# Use alpine:latest as parent image
+FROM alpine:latest
+
+# Use RUN to create an image layer
+
+# Execute "echo" command during the build process
+RUN echo "Hello!"
+
+# Write string to file
+RUN echo "World!" > /hw.txt
+
+# Set container entrypoint to "sh"
+ENTRYPOINT ["sh"]

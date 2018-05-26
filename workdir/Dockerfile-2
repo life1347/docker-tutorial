@@ -1,0 +1,9 @@
+FROM alpine:latest
+
+RUN echo "Hello World" > hw1.txt
+
+WORKDIR /tmp
+
+RUN echo "Hello World" > hw2.txt
+
+ENTRYPOINT ["sh"]
